@@ -10,3 +10,9 @@ This project aims to create a fun game when someone needs to take a break from w
 
 # Technologies 
 The following tools and frameworks were used in the construction of the project:
+-HTML
+-CSS
+-JavaScript
+
+# How to run
+You'll need to install Live Server(VSCode) to open the code
