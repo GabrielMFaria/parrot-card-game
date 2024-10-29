@@ -1,0 +1,130 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #eef9bf; 
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.titulo {
+  font-weight: 700;
+  color: #75B79E;
+  font-size: 56px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.jogo {
+  display: grid;
+  gap: 30px; 
+  justify-content: center;
+  align-content: center;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px; 
+  flex-grow: 1; 
+}
+
+.carta {
+  width: 125px;
+  height: 175px;
+  transform: rotateY(20deg); 
+}
+
+
+.carta .face {
+  width: 100%;
+  height: 100%;
+  background-color: #A7E9AF;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  transition: transform 0.6s;
+  backface-visibility: hidden;
+}
+
+.carta .frente {
+  transform: rotateY(0deg);
+}
+
+.carta .verso {
+  transform: rotateY(180deg);
+}
+
+.carta .virada .frente {
+  transform: rotateY(-180deg);
+}
+
+.carta .virada .verso {
+  transform: rotateY(0deg);
+}
+
+img {
+  width: 100px;
+  height: 150px;
+}
+
+
+@media (min-height: 1000px) {
+  .carta {
+    width: 150px;
+    height: 210px;
+  }
+
+  img {
+    width: 125px;
+    height: 180px;
+  }
+}
+
+
+@media (min-height: 1000px) {
+  .carta {
+    width: 150px;
+    height: 210px;
+  }
+
+  .carta img {
+    width: 85%; 
+  }
+}
+
+
+@media (max-width: 768px) {
+  .jogo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carta {
+    width: 100px;
+    height: 150px;
+  }
+
+  .carta img {
+    width: 75%; 
+  }
+}
+
+@media (min-width: 768px) {
+  .jogo {
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  }
+}
+
+
+
+
+
+
+
