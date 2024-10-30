@@ -45,14 +45,14 @@ function gifCarta(imagem) {
 }
 
 function virarCarta(carta) {
-if (carta.classList.contains("virada") || segundaCarta) {
-  return; 
+  if (carta.classList.contains("virada") || segundaCarta) {
+    return; 
   }
 
   carta.classList.add("virada");
   jogadas++;
 
-if (!primeiraCarta) {
+  if (!primeiraCarta) {
     primeiraCarta = carta;
   } else {
     segundaCarta = carta;
@@ -60,12 +60,11 @@ if (!primeiraCarta) {
   }
 }
 
-
 function verificarPar() {
   const primeiraImagem = primeiraCarta.querySelector(".verso img").src;
   const segundaImagem = segundaCarta.querySelector(".verso img").src;
 
-if (primeiraImagem === segundaImagem) {
+  if (primeiraImagem === segundaImagem) {
     cartasViradas += 2;
     resetarCartas(true);
   } else {
@@ -76,23 +75,16 @@ if (primeiraImagem === segundaImagem) {
     }, 1000);
   }
 
-  
-if (cartasViradas === document.querySelectorAll(".carta").length) {
+  if (cartasViradas === document.querySelectorAll(".carta").length) {
     setTimeout(() => {
       alert(`Você ganhou em ${jogadas} jogadas!`);
     }, 500);
   }
 }
 
-
-function resetarCartas(foiPar) {
-  if (foiPar) {
-    primeiraCarta = null;
-    segundaCarta = null;
-  } else {
-    primeiraCarta = null;
-    segundaCarta = null;
-  }
+function resetarCartas() {
+  primeiraCarta = null;
+  segundaCarta = null;
 }
 
 window.onload = iniciarJogo;
